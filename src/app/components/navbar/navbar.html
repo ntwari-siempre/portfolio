@@ -1,34 +1,75 @@
-<mat-toolbar
-  class="backdrop-blur-md bg-white/70 shadow-lg border-b border-gray-200 fixed top-0 z-50 transition-all duration-300">
+<mat-toolbar class="backdrop-blur-md bg-white/70 shadow-lg border-b border-gray-200 fixed top-0 left-0 right-0 z-50">
+
   <!-- Logo -->
-  <span class="flex items-center gap-3 font-bold text-xl text-blue-600 cursor-pointer hover:scale-105 transition">
-    <img src="Eliphase.jpg" class="w-12 h-12 rounded-full object-cover">
-    Eliphase Ntwari
+  <span class="flex items-center gap-3 font-bold text-xl text-blue-600 cursor-pointer">
+
+    <img src="Eliphase.jpg" alt="Eliphase" class="w-12 h-12 rounded-full object-cover">
+
+    <span class="hidden sm:block">
+      Eliphase Ntwari
+    </span>
+
   </span>
 
   <span class="flex-1"></span>
 
-  <!-- Navigation -->
+  <!-- Desktop Menu -->
   <div class="hidden md:flex gap-2 items-center">
 
-    <button mat-button routerLink="/" routerLinkActive="text-blue-600 bg-blue-50"
-      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+    <button mat-button routerLink="/" class="px-4 py-2 rounded-lg hover:bg-blue-100">
       Accueil
     </button>
 
-    <button mat-button routerLink="/projects" routerLinkActive="text-blue-600 bg-blue-50"
-      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+    <button mat-button routerLink="/projects" class="px-4 py-2 rounded-lg hover:bg-blue-100">
       Projets
     </button>
 
-    <button mat-button routerLink="/skills" routerLinkActive="text-blue-600 bg-blue-50"
-      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+    <button mat-button routerLink="/skills" class="px-4 py-2 rounded-lg hover:bg-blue-100">
       Compétences
     </button>
 
-    <button mat-button routerLink="/contact" routerLinkActive="text-blue-600 bg-blue-50"
-      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+    <button mat-button routerLink="/contact" class="px-4 py-2 rounded-lg hover:bg-blue-100">
       Contact
     </button>
+
   </div>
+
+  <!-- Mobile Button -->
+  <button mat-icon-button class="md:hidden" (click)="menuOpen = !menuOpen">
+
+    <mat-icon>
+      {{ menuOpen ? 'close' : 'menu' }}
+    </mat-icon>
+
+  </button>
+
 </mat-toolbar>
+
+<!-- Mobile Menu -->
+@if(menuOpen){
+
+<div class="md:hidden fixed top-16 left-0 right-0 bg-white shadow-xl border-b border-gray-200 z-40">
+
+  <div class="flex flex-col p-4 gap-2">
+
+    <a routerLink="/" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+      Accueil
+    </a>
+
+    <a routerLink="/projects" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+      Projets
+    </a>
+
+    <a routerLink="/skills" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+      Compétences
+    </a>
+
+    <a routerLink="/contact" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+      Contact
+    </a>
+
+  </div>
+
+</div>
+
+}
