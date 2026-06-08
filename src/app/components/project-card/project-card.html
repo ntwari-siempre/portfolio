@@ -1,0 +1,45 @@
+<mat-card class="rounded-2xl shadow-lg overflow-hidden transition hover:shadow-2xl">
+
+  <!-- IMAGE -->
+  <img
+    mat-card-image
+    [src]="image"
+    class="w-full h-48 object-cover"
+  />
+
+  <!-- HEADER -->
+  <mat-card-header class="p-4">
+    <mat-card-title class="text-xl font-bold text-gray-800">
+      {{ title }}
+    </mat-card-title>
+  </mat-card-header>
+
+  <!-- CONTENT -->
+  <mat-card-content class="px-4 pb-4 text-gray-600 leading-relaxed">
+    {{ description }}
+  </mat-card-content>
+
+  <!-- ACTIONS -->
+  <mat-card-actions class="flex justify-between px-4 pb-4">
+
+    <a
+      mat-button
+      [href]="github"
+      target="_blank"
+      class="px-4 py-1 rounded-lg bg-gray-900 text-white hover:bg-gray-700 transition"
+    >
+      GitHub
+    </a>
+
+    <a
+      mat-button
+      [href]="demo"
+      target="_blank"
+      class="px-4 py-1 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition"
+    >
+      Démo
+    </a>
+
+  </mat-card-actions>
+
+</mat-card>

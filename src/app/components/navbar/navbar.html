@@ -1,0 +1,34 @@
+<mat-toolbar
+  class="backdrop-blur-md bg-white/70 shadow-lg border-b border-gray-200 fixed top-0 z-50 transition-all duration-300">
+  <!-- Logo -->
+  <span class="flex items-center gap-3 font-bold text-xl text-blue-600 cursor-pointer hover:scale-105 transition">
+    <img src="Eliphase.jpg" class="w-12 h-12 rounded-full object-cover">
+    Eliphase Ntwari
+  </span>
+
+  <span class="flex-1"></span>
+
+  <!-- Navigation -->
+  <div class="hidden md:flex gap-2 items-center">
+
+    <button mat-button routerLink="/" routerLinkActive="text-blue-600 bg-blue-50"
+      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+      Accueil
+    </button>
+
+    <button mat-button routerLink="/projects" routerLinkActive="text-blue-600 bg-blue-50"
+      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+      Projets
+    </button>
+
+    <button mat-button routerLink="/skills" routerLinkActive="text-blue-600 bg-blue-50"
+      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+      Compétences
+    </button>
+
+    <button mat-button routerLink="/contact" routerLinkActive="text-blue-600 bg-blue-50"
+      class="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-100 hover:scale-105">
+      Contact
+    </button>
+  </div>
+</mat-toolbar>
