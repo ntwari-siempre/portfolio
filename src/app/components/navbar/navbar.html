@@ -13,63 +13,71 @@
 
   <span class="flex-1"></span>
 
-  <!-- Desktop Menu -->
-  <div class="hidden md:flex gap-2 items-center">
+  <!-- DESKTOP MENU -->
+  @if (!isMobile) {
 
-    <button mat-button routerLink="/" class="px-4 py-2 rounded-lg hover:bg-blue-100">
-      Accueil
+    <div class="flex gap-2 items-center">
+
+      <button mat-button routerLink="/" class="px-4 py-2 rounded-lg hover:bg-blue-100">
+        Accueil
+      </button>
+
+      <button mat-button routerLink="/projects" class="px-4 py-2 rounded-lg hover:bg-blue-100">
+        Projets
+      </button>
+
+      <button mat-button routerLink="/skills" class="px-4 py-2 rounded-lg hover:bg-blue-100">
+        Compétences
+      </button>
+
+      <button mat-button routerLink="/contact" class="px-4 py-2 rounded-lg hover:bg-blue-100">
+        Contact
+      </button>
+
+    </div>
+
+  }
+
+  <!-- MOBILE BUTTON -->
+  @if (isMobile) {
+
+    <button mat-icon-button (click)="menuOpen = !menuOpen">
+
+      <mat-icon>
+        {{ menuOpen ? 'close' : 'menu' }}
+      </mat-icon>
+
     </button>
 
-    <button mat-button routerLink="/projects" class="px-4 py-2 rounded-lg hover:bg-blue-100">
-      Projets
-    </button>
-
-    <button mat-button routerLink="/skills" class="px-4 py-2 rounded-lg hover:bg-blue-100">
-      Compétences
-    </button>
-
-    <button mat-button routerLink="/contact" class="px-4 py-2 rounded-lg hover:bg-blue-100">
-      Contact
-    </button>
-
-  </div>
-
-  <!-- Mobile Button -->
-  <button mat-icon-button class="md:hidden" (click)="menuOpen = !menuOpen">
-
-    <mat-icon>
-      {{ menuOpen ? 'close' : 'menu' }}
-    </mat-icon>
-
-  </button>
+  }
 
 </mat-toolbar>
 
-<!-- Mobile Menu -->
-@if(menuOpen){
+<!-- MOBILE MENU -->
+@if (menuOpen && isMobile) {
 
-<div class="md:hidden fixed top-16 left-0 right-0 bg-white shadow-xl border-b border-gray-200 z-40">
+  <div class="md:hidden fixed top-16 left-0 right-0 bg-white shadow-xl border-b border-gray-200 z-40">
 
-  <div class="flex flex-col p-4 gap-2">
+    <div class="flex flex-col p-4 gap-2">
 
-    <a routerLink="/" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
-      Accueil
-    </a>
+      <a routerLink="/" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+        Accueil
+      </a>
 
-    <a routerLink="/projects" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
-      Projets
-    </a>
+      <a routerLink="/projects" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+        Projets
+      </a>
 
-    <a routerLink="/skills" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
-      Compétences
-    </a>
+      <a routerLink="/skills" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+        Compétences
+      </a>
 
-    <a routerLink="/contact" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
-      Contact
-    </a>
+      <a routerLink="/contact" (click)="menuOpen=false" class="p-3 rounded-lg hover:bg-blue-50">
+        Contact
+      </a>
+
+    </div>
 
   </div>
-
-</div>
 
 }
