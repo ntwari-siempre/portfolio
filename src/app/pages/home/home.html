@@ -56,10 +56,36 @@
     </div>
 
     <!-- PHOTO -->
-    <div class="flex justify-center">
+    <div class="flex flex-col items-center">
 
-      <img src="Eliphase.jpg" alt="Photo de profil"
-        class="w-80 h-80 rounded-full object-cover border-8 border-white shadow-2xl hover:scale-105 transition duration-300">
+      <div class="relative group">
+
+        <!-- Glow background -->
+        <div
+          class="absolute inset-0 rounded-full bg-gradient-to-tr from-green-400 to-emerald-500 blur-2xl opacity-40 group-hover:opacity-60 transition">
+        </div>
+
+        <!-- Image -->
+        <img src="Eliphase.jpg" alt="Photo de profil"
+          class="relative w-80 h-80 rounded-full object-cover border-8 border-white shadow-2xl hover:scale-105 transition duration-300">
+
+      </div>
+
+      <!-- TEXTE SOUS LA PHOTO -->
+      <div class="mt-6 text-center">
+
+        <p class="text-gray-700 text-lg">
+          🎓 Formation : <strong>Master en Génie informatique</strong>
+        </p>
+
+        <a href="https://repository.ub.edu.bi/items/9a96ba68-0411-4d45-9e87-2b417b1decdb/full" target="_blank"
+          class="inline-block mt-2 text-green-600 font-medium underline hover:text-green-800 transition">
+
+          📄 Consulter mon mémoire
+
+        </a>
+
+      </div>
 
     </div>
 
